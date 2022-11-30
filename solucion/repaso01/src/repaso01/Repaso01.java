@@ -49,26 +49,29 @@ public class Repaso01 {
 
             if (horasNocturnas >= 10) {
                 adicionalNocturno = (valorNocturno * 10) / 100;
+                valorNocturno = valorNocturno + adicionalNocturno;
+
             }
 
-            valorNocturno = valorNocturno + adicionalNocturno;
             totalNocturno = valorNocturno * horasNocturnas;
-            subtotal =  totalMatutino + totalNocturno;
+            valorNocturno = 15;
             
+            subtotal = totalMatutino + totalNocturno;
             valorSocial = (subtotal * valorSocial) / 100;
             sueldoFinal = subtotal - valorSocial;
 
-            mensaje = String.format("Rol del trabajador de nombre %s y cédula %d."
+            mensaje = String.format("%sRol del trabajador de nombre %s y cédula %d."
                     + "\n\tHoras matutina trabajadas: %d.\n\tHoras nocturnas "
                     + "trabajadas: %d.\n\tSubtotal $%.2f\n\tSeguro Social $%.1f"
                     + "\n\tTotal a cancelar $%.1f\n\n",
+                    mensaje,
                     nombreEmpleado,
                     cedula, horasMatutinas,
                     horasNocturnas,
                     subtotal,
                     valorSocial,
                     sueldoFinal);
-            
+
             entrada.nextLine();
 
             contador = contador + 1;
