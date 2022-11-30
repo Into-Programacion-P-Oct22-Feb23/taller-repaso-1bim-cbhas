@@ -19,6 +19,7 @@ public class Repaso01 {
         double valorMatutino = 10;
         double valorNocturno = 15;
         double adicionalNocturno = 0;
+        double totalSocial;
         double valorSocial = 18;
         double totalMatutino;
         double totalNocturno;
@@ -55,10 +56,10 @@ public class Repaso01 {
 
             totalNocturno = valorNocturno * horasNocturnas;
             valorNocturno = 15;
-            
+
             subtotal = totalMatutino + totalNocturno;
-            valorSocial = (subtotal * valorSocial) / 100;
-            sueldoFinal = subtotal - valorSocial;
+            totalSocial = (subtotal * valorSocial) / 100;
+            sueldoFinal = subtotal - totalSocial;
 
             mensaje = String.format("%sRol del trabajador de nombre %s y cédula %d."
                     + "\n\tHoras matutina trabajadas: %d.\n\tHoras nocturnas "
@@ -69,7 +70,7 @@ public class Repaso01 {
                     cedula, horasMatutinas,
                     horasNocturnas,
                     subtotal,
-                    valorSocial,
+                    totalSocial,
                     sueldoFinal);
 
             entrada.nextLine();
